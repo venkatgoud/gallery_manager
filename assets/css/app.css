@@ -1,0 +1,34 @@
+/* This file is for your main application css. */
+
+@import "./phoenix.css";
+
+.image_container{
+    margin: 0 auto;
+    max-width: 80.0rem;
+    padding: 0 2.0rem;
+    position: relative;
+    border: 0;
+    width: 100%;
+    display: grid;    
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+.image_column{     
+    padding: 0 2.0rem;
+    /* border: 1px solid #ccc; */
+}
+
+.image_column:hover {
+    border: 1px solid #777;
+}
+
+.image_column img {
+    width: 100%;
+    height: auto;
+}
+
+.image_caption {
+    padding: 15px;
+    text-align: center;
+}
+

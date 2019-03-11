@@ -1,0 +1,15 @@
+<h1>Photos for <%= @username%></h1>
+
+<h2><%= link "New Photo", to: Routes.user_photo_path(@conn, :new, @user_id) %></h2>
+
+<div class="image_container">    
+<%= for photo <- @photos do %>  
+    <div class="image_column">
+      <a href="<%=Routes.user_photo_path(@conn, :show, @user_id, photo.id)%>"><img src="<%= GalleryManager.Path.url({ photo.path, photo }) %>" width="300" height="300"/> </a>
+      <span class="image_caption"><%= photo.caption %></span>
+      <%= link "Edit", to: Routes.user_photo_path(@conn, :edit, @user_id, photo.id)  %> </td>
+      <%= link "Delete", to: Routes.user_photo_path(@conn, :delete, @user_id, photo.id), method: :delete, data: [confirm: "Are you sure?"] %> </td>
+    </div>       
+<% end %> 
+</div>
+

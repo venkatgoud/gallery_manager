@@ -1,0 +1,5 @@
+<h1>Edit Photo</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.user_photo_path(@conn, :update, @photo.user_id, @photo.id)) %>
+
+<span><%= link "Back", to: Routes.user_photo_path(@conn, :index, @photo.user_id) %></span>

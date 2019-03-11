@@ -1,0 +1,19 @@
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :path %>   
+  <%= file_input f, :path, [{:accept,"image/*"},{:multiple, true}] %>
+  <%= error_tag f, :path %>
+  
+  <%= label f, :caption %>
+  <%= text_input f, :caption %>
+  <%= error_tag f, :caption %>
+    
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>
